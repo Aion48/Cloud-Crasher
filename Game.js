@@ -52,8 +52,8 @@ function step() {
 
 function move(e) {
     //This updates the global variables for rotation, so that the plane can rotate
-    thetaX = -(e.getY() - (getHeight() / 2)) / 720;
-    thetaY = -(e.getX() - (getWidth() / 2)) / 720;
+    thetaX = -(e.getY() - (getHeight() / 2)) / 1440;
+    thetaY = -(e.getX() - (getWidth() / 2)) / 1440;
     thetaZ = 3 * (-thetaY * -thetaX);
 }
 
@@ -593,99 +593,125 @@ function Plane(originpointx, originpointy, originpointz, scale) {
     var pr84 = new Vector((originpointx + -16.8868) * scale,(originpointy - -40.6836) * scale,(originpointz - 320.494) * scale);
         
         var green = new Color(85,107,47);
-        var t1 = new Triangle(p1,p2,p3,green);
-        var t2 = new Triangle(p4,p5,p6,green);
-        var t3 = new Triangle(p7,p8,p9,green);
-        var t4 = new Triangle(p10,p11,p12,green);
-        var t5 = new Triangle(p13,p14,p15,green);
-        var t6 = new Triangle(p16,p17,p18,green);
-        var t7 = new Triangle(p16,p18,p19,green);
-        var t8 = new Triangle(p16,p19,p20,green);
-        var t9 = new Triangle(p16,p20,p21,green);
-        var t10 = new Triangle(p22,p23,p24,green);
-        var t11 = new Triangle(p23,p24,p25,green);
-        var t12 = new Triangle(p24,p25,p26,green);
-        var t13 = new Triangle(p25,p26,p27,green);
-        var t14 = new Triangle(p28,p29,p30,green);
-        var t15 = new Triangle(p29,p30,p31,green);
-        var t16 = new Triangle(p30,p31,p32,green);
-        var t17 = new Triangle(p31,p32,p33,green);
-        var t18 = new Triangle(p32,p33,p34,green);
-        var t19 = new Triangle(p33,p34,p35,green);
-        var t20 = new Triangle(p34,p35,p36,green);
-        var t21 = new Triangle(p35,p36,p37,green);
-        var t22 = new Triangle(p36,p37,p38,green);
-        var t23 = new Triangle(p37,p38,p39,green);
-        var t24 = new Triangle(p38,p39,p40,green);
-        var t25 = new Triangle(p39,p40,p41,green);
-        var t26 = new Triangle(p42,p43,p44,green);
-        var t27 = new Triangle(p45,p46,p47,green);
-        var t28 = new Triangle(p48,p49,p48,green);
-        var t29 = new Triangle(p51,p52,p53,green);
-        var t30 = new Triangle(p54,p55,p56,green);
-        var t31 = new Triangle(p57,p58,p59,green);
-        var t32 = new Triangle(p60,p61,p62,green);
-        var t33 = new Triangle(p63,p64,p65,green);
-        var t34 = new Triangle(p66,p67,p68,green);
-        var t35 = new Triangle(p67,p68,p69,green);
-        var t36 = new Triangle(p68,p69,p70,green);
-        var t37 = new Triangle(p71,p72,p73,green);
-        var t38 = new Triangle(p72,p73,p74,green);
-        var t39 = new Triangle(p73,p74,p75,green);
-        var t40 = new Triangle(p74,p75,p76,green);
-        var t41 = new Triangle(p75,p76,p77,green);
-        var t42 = new Triangle(p78,p79,p80,green);
-        var t43 = new Triangle(p79,p80,p81,green);
-        var t44 = new Triangle(p80,p81,p82,green);
-        var t45 = new Triangle(p81,p82,p83,green);
-        var t46 = new Triangle(p82,p83,p84,green);
+        var tailwing = new Color(178,65,65);
+        var wing = new Color(220,124,28);
+        var body = new Color(23,77,183)
+        var t1 = new Triangle(p1,p2,p3,wing);
+        var t2 = new Triangle(p4,p5,p6,wing);
+        var t3 = new Triangle(p7,p9,p8,wing);
+        var t4 = new Triangle(p10,p11,p12,wing);
+        var t5 = new Triangle(p13,p14,p15,wing);
         
-        var tr1 = new Triangler(pr1,pr2,pr3,green);
-        var tr2 = new Triangler(pr4,pr5,pr6,green);
-        var tr3 = new Triangler(pr7,pr8,pr9,green);
-        var tr4 = new Triangler(pr10,pr11,pr12,green);
-        var tr5 = new Triangler(pr13,pr14,pr15,green);
-        var tr6 = new Triangler(pr16,pr17,pr18,green);
-        var tr7 = new Triangler(pr16,pr18,pr19,green);
-        var tr8 = new Triangler(pr16,pr19,pr20,green);
-        var tr9 = new Triangler(pr16,pr20,pr21,green);
-        var tr10 = new Triangler(pr22,pr23,pr24,green);
-        var tr11 = new Triangler(pr23,pr24,pr25,green);
-        var tr12 = new Triangler(pr24,pr25,pr26,green);
-        var tr13 = new Triangler(pr25,pr26,pr27,green);
-        var tr14 = new Triangler(pr28,pr29,pr30,green);
-        var tr15 = new Triangler(pr29,pr30,pr31,green);
-        var tr16 = new Triangler(pr30,pr31,pr32,green);
-        var tr17 = new Triangler(pr31,pr32,pr33,green);
-        var tr18 = new Triangler(pr32,pr33,pr34,green);
-        var tr19 = new Triangler(pr33,pr34,pr35,green);
-        var tr20 = new Triangler(pr34,pr35,pr36,green);
-        var tr21 = new Triangler(pr35,pr36,pr37,green);
-        var tr22 = new Triangler(pr36,pr37,pr38,green);
-        var tr23 = new Triangler(pr37,pr38,pr39,green);
-        var tr24 = new Triangler(pr38,pr39,pr40,green);
-        var tr25 = new Triangler(pr39,pr40,pr41,green);
-        var tr26 = new Triangler(pr42,pr43,pr44,green);
-        var tr27 = new Triangler(pr45,pr46,pr47,green);
-        var tr28 = new Triangler(pr48,pr49,pr48,green);
-        var tr29 = new Triangler(pr51,pr52,pr53,green);
-        var tr30 = new Triangler(pr54,pr55,pr56,green);
-        var tr31 = new Triangler(pr57,pr58,pr59,green);
-        var tr32 = new Triangler(pr60,pr61,pr62,green);
-        var tr33 = new Triangler(pr63,pr64,pr65,green);
-        var tr34 = new Triangler(pr66,pr67,pr68,green);
-        var tr35 = new Triangler(pr67,pr68,pr69,green);
-        var tr36 = new Triangler(pr68,pr69,pr70,green);
-        var tr37 = new Triangler(pr71,pr72,pr73,green);
-        var tr38 = new Triangler(pr72,pr73,pr74,green);
-        var tr39 = new Triangler(pr73,pr74,pr75,green);
-        var tr40 = new Triangler(pr74,pr75,pr76,green);
-        var tr41 = new Triangler(pr75,pr76,pr77,green);
-        var tr42 = new Triangler(pr78,pr79,pr80,green);
-        var tr43 = new Triangler(pr79,pr80,pr81,green);
-        var tr44 = new Triangler(pr80,pr81,pr82,green);
-        var tr45 = new Triangler(pr81,pr82,pr83,green);
-        var tr46 = new Triangler(pr82,pr83,pr84,green);
+        var t6 = new Triangle(p16,p17,p18,body);
+        var t7 = new Triangle(p16,p18,p19,body);
+        var t8 = new Triangle(p16,p19,p20,body);
+        var t9 = new Triangle(p16,p20,p21,body);
+        
+        var t10 = new Triangler(p22,p23,p24,body);
+        var t11 = new Triangle(p23,p24,p25,body);
+        var t12 = new Triangler(p24,p25,p26,body);
+        var t13 = new Triangle(p25,p26,p27,body);
+        
+        var t14 = new Triangle(p28,p29,p30,body);
+        var t15 = new Triangler(p29,p30,p31,body);
+        var t16 = new Triangle(p30,p31,p32,body);
+        var t17 = new Triangler(p31,p32,p33,body);
+        var t18 = new Triangle(p32,p33,p34,body);
+        var t19 = new Triangler(p33,p34,p35,body);
+        var t20 = new Triangle(p34,p35,p36,body);
+        var t21 = new Triangler(p35,p36,p37,body);
+        var t22 = new Triangle(p36,p37,p38,body);
+        var t23 = new Triangler(p37,p38,p39,body);
+        var t24 = new Triangle(p38,p39,p40,body);
+        var t25 = new Triangler(p39,p40,p41,body);
+        
+        
+        var t26 = new Triangle(p42,p43,p44,tailwing); //good
+        
+        var t27 = new Triangle(p46,p45,p47,tailwing); //good
+        
+        var t28 = new Triangle(p49,p48,p50,tailwing); //good
+        
+        var t29 = new Triangle(p51,p53,p52,tailwing); //good
+        
+        var t30 = new Triangle(p54,p55,p56,tailwing); //good
+        
+        var t31 = new Triangle(p57,p59,p58,tailwing); //good
+        
+        var t32 = new Triangle(p60,p62,p61,tailwing); //good
+        
+        var t33 = new Triangle(p63,p64,p65,tailwing); //good
+        
+        var t34 = new Triangle(p66,p67,p68,body);
+        var t35 = new Triangler(p67,p68,p69,body);
+        var t36 = new Triangle(p68,p69,p70,body);
+        var t37 = new Triangle(p71,p72,p73,body);
+        var t38 = new Triangler(p72,p73,p74,body);
+        var t39 = new Triangle(p73,p74,p75,body);
+        var t40 = new Triangler(p74,p75,p76,body);
+        var t41 = new Triangle(p75,p76,p77,body);
+        var t42 = new Triangle(p78,p79,p80,body);
+        var t43 = new Triangler(p79,p80,p81,body);
+        var t44 = new Triangle(p80,p81,p82,body);
+        var t45 = new Triangler(p81,p82,p83,body);
+        var t46 = new Triangle(p82,p83,p84,body);
+        
+        var tr1 = new Triangler(pr1,pr2,pr3,wing);
+        var tr2 = new Triangler(pr4,pr5,pr6,wing);
+        var tr3 = new Triangler(pr7,pr9,pr8,wing);
+        var tr4 = new Triangler(pr10,pr11,pr12,wing);
+        var tr5 = new Triangler(pr13,pr14,pr15,wing);
+        var tr6 = new Triangler(pr16,pr17,pr18,body);
+        var tr7 = new Triangler(pr16,pr18,pr19,body);
+        var tr8 = new Triangler(pr16,pr19,pr20,body);
+        var tr9 = new Triangler(pr16,pr20,pr21,body);
+        var tr10 = new Triangle(pr22,pr23,pr24,body);
+        var tr11 = new Triangler(pr23,pr24,pr25,body);
+        var tr12 = new Triangle(pr24,pr25,pr26,body);
+        var tr13 = new Triangler(pr25,pr26,pr27,body);
+        var tr14 = new Triangler(pr28,pr29,pr30,body);
+        var tr15 = new Triangle(pr29,pr30,pr31,body);
+        var tr16 = new Triangler(pr30,pr31,pr32,body);
+        var tr17 = new Triangle(pr31,pr32,pr33,body);
+        var tr18 = new Triangler(pr32,pr33,pr34,body);
+        var tr19 = new Triangle(pr33,pr34,pr35,body);
+        var tr20 = new Triangler(pr34,pr35,pr36,body);
+        var tr21 = new Triangle(pr35,pr36,pr37,body);
+        var tr22 = new Triangler(pr36,pr37,pr38,body);
+        var tr23 = new Triangle(pr37,pr38,pr39,body);
+        var tr24 = new Triangler(pr38,pr39,pr40,body);
+        var tr25 = new Triangle(pr39,pr40,pr41,body);
+        
+       var tr26 = new Triangler(pr42,pr43,pr44,tailwing); //good
+        
+        var tr27 = new Triangler(pr46,pr45,pr47,tailwing); //good
+        
+        var tr28 = new Triangler(pr49,pr48,pr50,tailwing); //good
+        
+        var tr29 = new Triangler(pr51,pr53,pr52,tailwing); //good
+        
+        var tr30 = new Triangler(pr54,pr55,pr56,tailwing); //good
+        
+        var tr31 = new Triangler(pr57,pr59,p58,tailwing); //good
+        
+        var tr32 = new Triangler(pr60,pr62,pr61,tailwing); //good
+        
+        var tr33 = new Triangler(pr63,pr64,pr65,tailwing); //good
+        
+        
+        var tr34 = new Triangler(pr66,pr67,pr68,body);
+        var tr35 = new Triangle(pr67,pr68,pr69,body);
+        var tr36 = new Triangler(pr68,pr69,pr70,body);
+        var tr37 = new Triangler(pr71,pr72,pr73,body);
+        var tr38 = new Triangle(pr72,pr73,pr74,body);
+        var tr39 = new Triangler(pr73,pr74,pr75,body);
+        var tr40 = new Triangle(pr74,pr75,pr76,body);
+        var tr41 = new Triangler(pr75,pr76,pr77,body);
+        var tr42 = new Triangler(pr78,pr79,pr80,body);
+        var tr43 = new Triangle(pr79,pr80,pr81,body);
+        var tr44 = new Triangler(pr80,pr81,pr82,body);
+        var tr45 = new Triangle(pr81,pr82,pr83,body);
+        var tr46 = new Triangler(pr82,pr83,pr84,body);
         
         this.group = new Mesh();
         this.group.add(t1);
