@@ -807,7 +807,7 @@ function Plane(originpointx, originpointy, originpointz, scale) {
         this.group.add(tr45);
         this.group.add(tr46);//*/
 
-    
+        this.group.mesh.sort(function(a,b){return b.tri[0].array[2] - a.tri[0].array[2]});
     
     
     
