@@ -84,10 +84,10 @@ function cloudPath() {
     time += (0.1) * ((score + 20)/20);
 
     //This function randomly creates up to 50 clouds, increasing as the score increases
-    if (Randomizer.nextInt(0, 1000) >= (900) && allCloud.length < (1000 + score)) {
+    if (Randomizer.nextInt(0, 1000) >= (975) && allCloud.length < (200 + score)) {
         //These randomize the x and y positions of the cloud, and spreads a few clouds around them.
-        var xposc = Randomizer.nextInt(-50, 50);
-        var yposc = Randomizer.nextInt(-50, 50);
+        var xposc = Randomizer.nextInt(-40, 40);
+        var yposc = Randomizer.nextInt(-40, 40);
         var v = Randomizer.nextInt(25, 200) / 100;
         var zf = 40;
         //Here 5 clouds are added to the array to make one big cloud
